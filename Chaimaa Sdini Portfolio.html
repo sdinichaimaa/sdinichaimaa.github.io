@@ -1,0 +1,408 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Chaimaa Sdini Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: technical-drawing sheet — title block (cartouche) hero, then numbered process only where order is real */
+:root{
+  --paper:#eef0ee; --sheet:#f8f9f7; --ink:#152033; --ink-2:#4a5566; --rule:#c9cfd0;
+  --accent:#b8661a; --accent-soft:#f3e2cf; --line:#1f3a5c;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+  --s-1:.8125rem; --s0:1rem; --s1:1.25rem; --s2:1.625rem; --s3:2.25rem; --s4:clamp(2.4rem,6vw,4.25rem);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f141b; --sheet:#151c25; --ink:#e7ebef; --ink-2:#a3adba; --rule:#2c3644;
+  --accent:#e59a4f; --accent-soft:#3a2a1a; --line:#8fb0d6; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f141b; --sheet:#151c25; --ink:#e7ebef; --ink-2:#a3adba; --rule:#2c3644;
+  --accent:#e59a4f; --accent-soft:#3a2a1a; --line:#8fb0d6; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:var(--s0);line-height:1.6;
+  background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+  background-size:48px 48px;background-attachment:fixed}
+body[data-lang="fr"] [lang="en"], body[data-lang="en"] [lang="fr"]{display:none}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-size:var(--s-1);letter-spacing:.04em}
+.label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--sheet)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--sheet);border-bottom:1px solid var(--rule)}
+.nav{display:flex;align-items:center;gap:20px;padding-block:12px;flex-wrap:wrap}
+.brand{font-family:var(--f-display);font-weight:700;font-stretch:115%;letter-spacing:.02em;text-decoration:none;margin-right:auto}
+.brand span{color:var(--accent)}
+.links{display:flex;gap:18px;flex-wrap:wrap}
+.links a{text-decoration:none;font-size:var(--s-1);color:var(--ink-2)}
+.links a:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.lang button{font:500 .75rem var(--f-mono);letter-spacing:.08em;background:none;color:var(--ink-2);border:0;padding:6px 10px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+@media (max-width:640px){.links{display:none}}
+
+section{padding-block:72px}
+.sec-head{display:flex;gap:16px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;margin-bottom:32px;border-bottom:1.5px solid var(--ink);padding-bottom:10px}
+.sec-head h2{font-size:var(--s3);font-stretch:110%;font-weight:700}
+
+/* hero */
+.hero{padding-block:56px 64px}
+.sheet{background:var(--sheet);border:1.5px solid var(--ink);display:grid;grid-template-columns:1.6fr 1fr}
+.hero-main{padding:clamp(24px,5vw,56px);display:flex;flex-direction:column;gap:22px;min-width:0;border-right:1.5px solid var(--ink)}
+.hero h1{font-size:var(--s4);font-stretch:118%;font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:var(--s1);color:var(--ink-2);max-width:34em;line-height:1.5}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:12px 20px;border:1.5px solid var(--ink);border-radius:2px}
+.btn.primary{background:var(--ink);color:var(--sheet)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn:not(.primary):hover{background:var(--accent-soft)}
+.cartouche{display:grid;grid-template-columns:1fr;align-content:stretch;min-width:0}
+.cartouche div{padding:14px 20px;border-bottom:1px solid var(--rule);display:grid;gap:2px}
+.cartouche div:last-child{border-bottom:0}
+.cartouche b{font-weight:500;font-size:.95rem}
+.cartouche .avail b{color:var(--accent)}
+@media (max-width:820px){.sheet{grid-template-columns:1fr}.hero-main{border-right:0;border-bottom:1.5px solid var(--ink)}.cartouche{grid-template-columns:1fr 1fr}.cartouche div:nth-child(odd){border-right:1px solid var(--rule)}}
+@media (max-width:420px){.cartouche{grid-template-columns:1fr}.cartouche div:nth-child(odd){border-right:0}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.svc{background:var(--sheet);padding:26px 24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.svc .tag{font-family:var(--f-mono);font-size:.7rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
+.svc h3{font-size:var(--s1);font-weight:700;font-stretch:105%}
+.svc p{color:var(--ink-2);font-size:.95rem}
+.svc ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.svc li{font-family:var(--f-mono);font-size:.72rem;border:1px solid var(--rule);padding:3px 8px;border-radius:2px;color:var(--ink-2)}
+
+/* projects */
+.featured{background:var(--sheet);border:1.5px solid var(--ink);display:grid;grid-template-columns:1.1fr 1fr;margin-bottom:24px}
+.featured .txt{padding:32px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.featured h3{font-size:var(--s2);font-stretch:110%;font-weight:700}
+.featured .txt p{color:var(--ink-2)}
+.modules{border-left:1.5px solid var(--ink);padding:24px 28px;min-width:0}
+.modules ol{list-style:none;margin:10px 0 0;padding:0;columns:2;column-gap:24px}
+.modules li{padding:7px 0;border-bottom:1px dashed var(--rule);font-size:.9rem;break-inside:avoid}
+.stack{display:flex;flex-wrap:wrap;gap:6px}
+.stack span{font-family:var(--f-mono);font-size:.72rem;background:var(--accent-soft);color:var(--ink);padding:3px 8px;border-radius:2px}
+.note{font-size:.82rem;color:var(--ink-2);border-left:2px solid var(--accent);padding-left:10px}
+@media (max-width:820px){.featured{grid-template-columns:1fr}.modules{border-left:0;border-top:1.5px solid var(--ink)}}
+@media (max-width:460px){.modules ol{columns:1}}
+.grid-proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px}
+.proj{background:var(--sheet);border:1px solid var(--rule);padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.proj h3{font-size:var(--s1);font-weight:700}
+.proj p{color:var(--ink-2);font-size:.95rem}
+.proj ul{margin:0;padding-left:18px;font-size:.9rem;color:var(--ink-2)}
+.proj .mono{color:var(--accent)}
+.proj .stack{margin-top:auto}
+
+/* formats */
+.formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px}
+.fmt{border-top:3px solid var(--line);padding-top:14px;display:grid;gap:6px}
+.fmt h3{font-size:1.05rem;font-weight:700}
+.fmt p{font-size:.92rem;color:var(--ink-2)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid var(--ink);background:var(--sheet)}
+.step{padding:24px;border-right:1px solid var(--rule);display:grid;gap:8px;align-content:start;min-width:0}
+.step:last-child{border-right:0}
+.step .n{font-family:var(--f-display);font-stretch:125%;font-weight:800;font-size:var(--s2);color:var(--accent);line-height:1}
+.step h3{font-size:1.05rem}
+.step p{font-size:.92rem;color:var(--ink-2)}
+@media (max-width:820px){.steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+@media (max-width:460px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--rule)}.step:last-child{border-bottom:0}}
+.quote-line{margin-top:20px;font-size:var(--s1);font-family:var(--f-display);font-stretch:105%}
+.quote-line span{color:var(--accent)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:24px}
+.skills h3{font-size:.95rem;font-family:var(--f-mono);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-bottom:10px}
+.skills ul{list-style:none;margin:0;padding:0}
+.skills li{padding:8px 0;border-bottom:1px solid var(--rule)}
+
+/* contact */
+.contact{background:var(--ink);color:var(--sheet)}
+.contact .wrap{padding-block:72px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.contact h2{font-size:var(--s3);font-stretch:115%;font-weight:800}
+.contact p{color:color-mix(in srgb,var(--sheet) 75%,transparent);margin-top:14px;max-width:32em}
+.clinks{display:grid;gap:12px;align-content:start}
+.clinks a{display:flex;justify-content:space-between;gap:12px;text-decoration:none;border:1px solid color-mix(in srgb,var(--sheet) 35%,transparent);padding:16px 18px;font-weight:500}
+.clinks a:hover{border-color:var(--accent);color:var(--accent)}
+.clinks small{font-family:var(--f-mono);opacity:.7;overflow-wrap:anywhere}
+@media (max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+footer{padding-block:24px;font-family:var(--f-mono);font-size:.75rem;color:var(--ink-2)}
+@media (prefers-reduced-motion:no-preference){.btn,.clinks a{transition:background .15s,color .15s,border-color .15s}}
+</style>
+
+<body data-lang="fr">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">C<span>.</span>SDINI</a>
+    <nav class="links" aria-label="Sections">
+      <a href="#services"><span lang="fr">Prestations</span><span lang="en">Services</span></a>
+      <a href="#projets"><span lang="fr">Réalisations</span><span lang="en">Work</span></a>
+      <a href="#methode"><span lang="fr">Méthode</span><span lang="en">Process</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button id="btn-fr" type="button" aria-pressed="true" data-set="fr">FR</button>
+      <button id="btn-en" type="button" aria-pressed="false" data-set="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="sheet">
+      <div class="hero-main">
+        <span class="label"><span lang="fr">Ingénieure d'État · Génie Industriel</span><span lang="en">State Engineer · Industrial Engineering</span></span>
+        <h1>Chaimaa Sdini</h1>
+        <p class="lede" lang="fr">Je transforme vos données, vos processus et vos réunions de direction en <strong>outils clairs</strong> : présentations, rapports, tableaux de bord, applications de gestion et vidéos.</p>
+        <p class="lede" lang="en">I turn your data, processes and management meetings into <strong>clear tools</strong>: presentations, reports, dashboards, business applications and videos.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact"><span lang="fr">Parler de votre projet</span><span lang="en">Discuss your project</span></a>
+          <a class="btn" href="#projets"><span lang="fr">Voir les réalisations</span><span lang="en">See my work</span></a>
+        </div>
+      </div>
+      <dl class="cartouche" style="margin:0">
+        <div><dt class="label"><span lang="fr">Profil</span><span lang="en">Profile</span></dt><dd style="margin:0"><b><span lang="fr">Ingénieure industrielle &amp; développeuse de solutions digitales</span><span lang="en">Industrial engineer &amp; digital solutions developer</span></b></dd></div>
+        <div><dt class="label"><span lang="fr">Spécialités</span><span lang="en">Focus</span></dt><dd style="margin:0"><b><span lang="fr">Pilotage de la performance, reporting, digitalisation</span><span lang="en">Performance management, reporting, digitalisation</span></b></dd></div>
+        <div><dt class="label"><span lang="fr">Basée à</span><span lang="en">Based in</span></dt><dd style="margin:0"><b>Marrakech, <span lang="fr">Maroc</span><span lang="en">Morocco</span></b></dd></div>
+        <div class="avail"><dt class="label"><span lang="fr">Disponibilité</span><span lang="en">Availability</span></dt><dd style="margin:0"><b><span lang="fr">Freelance · Maroc &amp; à distance</span><span lang="en">Freelance · Morocco &amp; remote</span></b></dd></div>
+        <div><dt class="label"><span lang="fr">Tarifs</span><span lang="en">Rates</span></dt><dd style="margin:0"><b><span lang="fr">Sur devis, selon votre besoin</span><span lang="en">Quoted per project</span></b></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span lang="fr">Ce que je réalise</span><span lang="en">What I make</span></h2>
+      <span class="label"><span lang="fr">7 domaines</span><span lang="en">7 areas</span></span>
+    </div>
+    <div class="services">
+      <article class="svc">
+        <span class="tag"><span lang="fr">Présentations</span><span lang="en">Presentations</span></span>
+        <h3><span lang="fr">Présentations CODIR et institutionnelles</span><span lang="en">Board and corporate presentations</span></h3>
+        <p lang="fr">Des supports clairs pour vos comités de direction, revues de performance, réunions clients et lancements de projets.</p>
+        <p lang="en">Clear decks for executive committees, performance reviews, client meetings and project kick-offs.</p>
+        <ul><li>PowerPoint</li><li><span lang="fr">HTML animé</span><span lang="en">Animated HTML</span></li><li>PDF</li></ul>
+      </article>
+      <article class="svc">
+        <span class="tag"><span lang="fr">Rapports</span><span lang="en">Reports</span></span>
+        <h3><span lang="fr">Rapports de direction et industriels</span><span lang="en">Management and industrial reports</span></h3>
+        <p lang="fr">Rapports mensuels de performance, synthèses d'activité, rapports d'audit, bilans de projet, mise en forme professionnelle.</p>
+        <p lang="en">Monthly performance reports, activity summaries, audit reports, project reviews and professional formatting.</p>
+        <ul><li>Word</li><li>PDF</li><li>KPI</li></ul>
+      </article>
+      <article class="svc">
+        <span class="tag">Dashboards</span>
+        <h3><span lang="fr">Tableaux de bord Excel et Power BI</span><span lang="en">Excel and Power BI dashboards</span></h3>
+        <p lang="fr">Production, ventes, stock, maintenance, QSE : vos fichiers Excel deviennent des tableaux de bord interactifs et à jour.</p>
+        <p lang="en">Production, sales, stock, maintenance, QHSE: your Excel files become interactive, up-to-date dashboards.</p>
+        <ul><li>Excel</li><li>Power BI</li><li>Power Query</li><li>DAX</li></ul>
+      </article>
+      <article class="svc">
+        <span class="tag">Applications</span>
+        <h3><span lang="fr">Applications web de gestion</span><span lang="en">Web business applications</span></h3>
+        <p lang="fr">Suivi des plans d'action, des équipements, de la maintenance, des non-conformités ou des projets, avec droits d'accès par utilisateur.</p>
+        <p lang="en">Tracking for action plans, equipment, maintenance, non-conformities or projects, with per-user access rights.</p>
+        <ul><li>Python</li><li>Flask</li><li>SQL</li><li>JavaScript</li></ul>
+      </article>
+      <article class="svc">
+        <span class="tag">Automatisation<span lang="en"> · Automation</span></span>
+        <h3><span lang="fr">Automatisation du reporting</span><span lang="en">Reporting automation</span></h3>
+        <p lang="fr">Consolidation de fichiers, génération automatique de rapports PDF, alertes d'échéances, suppression des tâches répétitives.</p>
+        <p lang="en">File consolidation, automatic PDF reports, deadline alerts, and removing repetitive tasks.</p>
+        <ul><li>Python</li><li>Excel</li><li>VBA</li></ul>
+      </article>
+      <article class="svc">
+        <span class="tag"><span lang="fr">Vidéos</span><span lang="en">Videos</span></span>
+        <h3><span lang="fr">Vidéos de présentation et de démonstration</span><span lang="en">Presentation and demo videos</span></h3>
+        <p lang="fr">Vidéos de présentation d'entreprise ou de projet, démonstrations d'applications, tutoriels de prise en main.</p>
+        <p lang="en">Company and project videos, application demos and onboarding tutorials.</p>
+        <ul><li>Motion</li><li>Démo<span lang="en">s</span></li><li>Tutoriels<span lang="en"> · Tutorials</span></li></ul>
+      </article>
+      <article class="svc">
+        <span class="tag"><span lang="fr">Conseil</span><span lang="en">Consulting</span></span>
+        <h3><span lang="fr">Génie industriel et amélioration continue</span><span lang="en">Industrial engineering and continuous improvement</span></h3>
+        <p lang="fr">Cartographie des processus, mise en place de KPI, plans d'action, 5S, AMDEC, documentation des systèmes de management.</p>
+        <p lang="en">Process mapping, KPI set-up, action plans, 5S, FMEA and management-system documentation.</p>
+        <ul><li>5S</li><li><span lang="fr">AMDEC</span><span lang="en">FMEA</span></li><li>PDCA</li><li>ISO</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projets">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span lang="fr">Réalisations</span><span lang="en">Selected work</span></h2>
+      <a class="label" href="https://github.com/sdinichaimaa" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+
+    <article class="featured">
+      <div class="txt">
+        <span class="label"><span lang="fr">Projet phare · réalisé en entreprise</span><span lang="en">Flagship project · built in-house</span></span>
+        <h3><span lang="fr">Plateforme de pilotage de la performance industrielle</span><span lang="en">Industrial performance management platform</span></h3>
+        <p lang="fr">Conception et développement d'une plateforme web qui centralise les plans d'action, les indicateurs, les documents et les processus métiers d'un groupe industriel multi-sites. Elle remplace une gestion dispersée entre fichiers Excel, e-mails et reportings, et accélère la préparation des réunions de direction.</p>
+        <p lang="en">Design and development of a web platform that brings together the action plans, KPIs, documents and business processes of a multi-site industrial group. It replaces scattered Excel files, emails and reports, and speeds up executive meeting preparation.</p>
+        <ul class="proj-points" style="margin:0;padding-left:18px;color:var(--ink-2);font-size:.92rem">
+          <li lang="fr">Habilitations par profil, par métier et par site</li><li lang="en">Access rights by role, department and site</li>
+          <li lang="fr">Import Excel intelligent avec contrôle des doublons</li><li lang="en">Smart Excel import with duplicate control</li>
+          <li lang="fr">Alertes automatiques : retards, échéances du jour, échéances proches</li><li lang="en">Automatic alerts for late, due and upcoming actions</li>
+          <li lang="fr">Circuit de validation et signature des dossiers d'investissement</li><li lang="en">Approval and sign-off workflow for investment files</li>
+        </ul>
+        <div class="stack"><span>Python</span><span>Flask</span><span>TiDB / SQL</span><span>JavaScript</span><span>Gunicorn</span></div>
+        <p class="note" lang="fr">Application interne : démonstration sur données fictives disponible sur demande.</p>
+        <p class="note" lang="en">Internal application: a demo on sample data is available on request.</p>
+      </div>
+      <div class="modules">
+        <span class="label"><span lang="fr">Modules développés</span><span lang="en">Modules built</span></span>
+        <ol>
+          <li>Dashboard</li>
+          <li><span lang="fr">Plans d'action (PAC)</span><span lang="en">Action plans</span></li>
+          <li><span lang="fr">Axes stratégiques CODIR</span><span lang="en">Board strategic axes</span></li>
+          <li><span lang="fr">Mise à niveau des sites</span><span lang="en">Site upgrades</span></li>
+          <li>QSE / HSE</li>
+          <li><span lang="fr">Énergie</span><span lang="en">Energy</span></li>
+          <li><span lang="fr">Processus métiers</span><span lang="en">Business processes</span></li>
+          <li><span lang="fr">Investissements</span><span lang="en">Investments</span></li>
+          <li><span lang="fr">Gouvernance documentaire</span><span lang="en">Document governance</span></li>
+          <li>Reporting</li>
+          <li><span lang="fr">Réunions CODIR</span><span lang="en">Board meetings</span></li>
+          <li><span lang="fr">Programme d'audit</span><span lang="en">Audit programme</span></li>
+          <li><span lang="fr">Utilisateurs et droits</span><span lang="en">Users and rights</span></li>
+        </ol>
+      </div>
+    </article>
+
+    <div class="grid-proj">
+      <article class="proj">
+        <span class="mono">smart-salary-planner · V3.2</span>
+        <h3>Smart Salary Planner</h3>
+        <p lang="fr">Application web de gestion budgétaire personnelle : à partir du salaire et des charges réelles, elle analyse la situation et propose une répartition du reste.</p>
+        <p lang="en">Personal budgeting web app: from salary and actual expenses, it analyses the situation and suggests how to split what's left.</p>
+        <ul>
+          <li lang="fr">Parcours guidé : salaire, charges, analyse, budget</li><li lang="en">Guided flow: salary, expenses, analysis, budget</li>
+          <li lang="fr">Saisie rapide des dépenses par catégorie</li><li lang="en">Quick expense entry by category</li>
+          <li lang="fr">Épargne prévue, utilisée et restante</li><li lang="en">Planned, used and remaining savings</li>
+          <li lang="fr">Réinitialisation sécurisée du mot de passe</li><li lang="en">Secure password reset</li>
+        </ul>
+        <div class="stack"><span>Python</span><span>Flask</span><span>SQLite / TiDB</span></div>
+      </article>
+      <article class="proj">
+        <span class="mono">integrated-management-system</span>
+        <h3><span lang="fr">Système de management intégré</span><span lang="en">Integrated management system</span></h3>
+        <p lang="fr">Outil de suivi pour un système de management qualité, sécurité et environnement : actions, responsables, échéances et indicateurs.</p>
+        <p lang="en">Tracking tool for a quality, safety and environment management system: actions, owners, deadlines and KPIs.</p>
+        <div class="stack"><span>QSE</span><span>Python</span><span>Web</span></div>
+      </article>
+      <article class="proj">
+        <span class="mono">equipment-management</span>
+        <h3><span lang="fr">Gestion des équipements</span><span lang="en">Equipment management</span></h3>
+        <p lang="fr">Application de suivi du parc d'équipements : inventaire, état, affectation et historique.</p>
+        <p lang="en">Equipment fleet tracking app: inventory, status, assignment and history.</p>
+        <div class="stack"><span><span lang="fr">Maintenance</span><span lang="en">Maintenance</span></span><span>Web</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="formats">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span lang="fr">Livrables possibles</span><span lang="en">Deliverables</span></h2>
+      <span class="label"><span lang="fr">Exemples sur demande</span><span lang="en">Samples on request</span></span>
+    </div>
+    <div class="formats">
+      <div class="fmt"><h3><span lang="fr">Présentation HTML animée</span><span lang="en">Animated HTML deck</span></h3><p lang="fr">Consultable dans un navigateur, sur ordinateur ou mobile, avec transitions et graphiques.</p><p lang="en">Opens in any browser, on desktop or mobile, with transitions and charts.</p></div>
+      <div class="fmt"><h3><span lang="fr">Fichier PowerPoint</span><span lang="en">PowerPoint file</span></h3><p lang="fr">Modifiable par vos équipes, à votre charte graphique.</p><p lang="en">Editable by your team, in your brand style.</p></div>
+      <div class="fmt"><h3><span lang="fr">Rapport Word ou PDF</span><span lang="en">Word or PDF report</span></h3><p lang="fr">Structuré, illustré de graphiques et prêt à diffuser.</p><p lang="en">Structured, illustrated with charts and ready to share.</p></div>
+      <div class="fmt"><h3><span lang="fr">Tableau de bord</span><span lang="en">Dashboard</span></h3><p lang="fr">Fichier Excel automatisé ou rapport Power BI connecté à vos données.</p><p lang="en">Automated Excel file or Power BI report linked to your data.</p></div>
+      <div class="fmt"><h3><span lang="fr">Application web</span><span lang="en">Web application</span></h3><p lang="fr">Hébergée, avec comptes utilisateurs et documentation.</p><p lang="en">Hosted, with user accounts and documentation.</p></div>
+      <div class="fmt"><h3><span lang="fr">Vidéo</span><span lang="en">Video</span></h3><p lang="fr">Présentation, démonstration ou tutoriel au format MP4.</p><p lang="en">Presentation, demo or tutorial as MP4.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="methode">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span lang="fr">Comment je travaille</span><span lang="en">How I work</span></h2>
+      <span class="label"><span lang="fr">4 étapes</span><span lang="en">4 steps</span></span>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3><span lang="fr">Échange</span><span lang="en">Briefing</span></h3><p lang="fr">On clarifie votre besoin, vos données et le résultat attendu.</p><p lang="en">We clarify your need, your data and the expected result.</p></div>
+      <div class="step"><span class="n">02</span><h3><span lang="fr">Proposition</span><span lang="en">Proposal</span></h3><p lang="fr">Je vous envoie le périmètre, le délai et un devis adapté.</p><p lang="en">I send you the scope, timeline and a tailored quote.</p></div>
+      <div class="step"><span class="n">03</span><h3><span lang="fr">Réalisation</span><span lang="en">Delivery</span></h3><p lang="fr">Je produis avec des points d'étape pour valider chaque version.</p><p lang="en">I build with checkpoints so you can approve each version.</p></div>
+      <div class="step"><span class="n">04</span><h3><span lang="fr">Livraison</span><span lang="en">Handover</span></h3><p lang="fr">Remise des fichiers, prise en main et ajustements finaux.</p><p lang="en">Files handed over, walkthrough and final adjustments.</p></div>
+    </div>
+    <p class="quote-line" lang="fr">Chaque projet est différent : <span>le tarif se discute selon votre besoin.</span></p>
+    <p class="quote-line" lang="en">Every project is different: <span>pricing is agreed around your needs.</span></p>
+  </div>
+</section>
+
+<section id="competences">
+  <div class="wrap">
+    <div class="sec-head"><h2><span lang="fr">Compétences</span><span lang="en">Skills</span></h2></div>
+    <div class="skills">
+      <div><h3><span lang="fr">Génie industriel</span><span lang="en">Industrial engineering</span></h3><ul>
+        <li><span lang="fr">Pilotage par KPI</span><span lang="en">KPI-driven management</span></li>
+        <li><span lang="fr">Amélioration continue · 5S · AMDEC</span><span lang="en">Continuous improvement · 5S · FMEA</span></li>
+        <li><span lang="fr">Systèmes de management QSE</span><span lang="en">QHSE management systems</span></li>
+        <li><span lang="fr">Gouvernance et processus métiers</span><span lang="en">Governance and business processes</span></li></ul></div>
+      <div><h3><span lang="fr">Gestion de projet</span><span lang="en">Project management</span></h3><ul>
+        <li><span lang="fr">Plans d'action et suivi des engagements</span><span lang="en">Action plans and commitment tracking</span></li>
+        <li><span lang="fr">Préparation des réunions de direction</span><span lang="en">Executive meeting preparation</span></li>
+        <li><span lang="fr">Transformation digitale</span><span lang="en">Digital transformation</span></li>
+        <li><span lang="fr">Coordination multi-sites</span><span lang="en">Multi-site coordination</span></li></ul></div>
+      <div><h3>Data &amp; BI</h3><ul>
+        <li>Excel · Power Query</li><li>Power BI · DAX</li><li>SQL · TiDB</li><li><span lang="fr">Reporting automatisé</span><span lang="en">Automated reporting</span></li></ul></div>
+      <div><h3><span lang="fr">Développement</span><span lang="en">Development</span></h3><ul>
+        <li>Python · Flask</li><li>HTML · CSS · JavaScript</li><li><span lang="fr">Gestion des accès et sécurité</span><span lang="en">Access control and security</span></li><li><span lang="fr">Déploiement web</span><span lang="en">Web deployment</span></li></ul></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="contact" id="contact" style="padding-block:0">
+  <div class="wrap">
+    <div>
+      <span class="label" style="color:inherit;opacity:.7">Contact</span>
+      <h2 lang="fr">Un rapport, une présentation ou un outil à créer ?</h2>
+      <h2 lang="en">A report, a deck or a tool to build?</h2>
+      <p lang="fr">Décrivez-moi votre besoin en quelques lignes. Je vous réponds avec une proposition et un devis adapté à votre projet.</p>
+      <p lang="en">Tell me about your need in a few lines. I'll reply with a proposal and a quote fitted to your project.</p>
+    </div>
+    <div class="clinks">
+      <a href="https://www.linkedin.com/in/chaimaa-sdini-a13147203" target="_blank" rel="noopener">LinkedIn <small>chaimaa-sdini ↗</small></a>
+      <a href="https://github.com/sdinichaimaa" target="_blank" rel="noopener">GitHub <small>sdinichaimaa ↗</small></a>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">© 2026 Chaimaa Sdini · Marrakech</div></footer>
+
+<script>
+(function(){
+  var body=document.body, btns=document.querySelectorAll('.lang button');
+  function set(l){
+    body.setAttribute('data-lang',l);
+    document.documentElement.lang=l;
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.set===l))});
+    try{localStorage.setItem('cs-lang',l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+  try{var s=localStorage.getItem('cs-lang'); if(s==='en'||s==='fr') set(s);}catch(e){}
+})();
+</script>
+
+</body></html>
